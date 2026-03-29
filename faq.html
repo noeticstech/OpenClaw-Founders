@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — OpenClaw</title>
+  <meta name="description" content="Frequently asked questions about OpenClaw. Setup, configuration, security, model support, and common troubleshooting answers for founders and builders." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⚡</span><span class="logo-text">OpenClaw</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#why" class="nav-link">Why</a></li>
+        <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="setup.html" class="nav-link">Setup</a></li>
+        <li><a href="usecases.html" class="nav-link">Use Cases</a></li>
+        <li><a href="docs.html" class="nav-link">Docs</a></li>
+        <li><a href="faq.html" class="nav-link" style="color:var(--accent-primary)">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="setup.html" class="btn btn-primary btn-sm">Get Started →</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#why" class="mobile-link">Why OpenClaw</a>
+      <a href="setup.html" class="mobile-link">Setup Guide</a>
+      <a href="usecases.html" class="mobile-link">Use Cases</a>
+      <a href="docs.html" class="mobile-link">Docs</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag page-hero-tag">FAQ</span>
+      <h1 class="page-hero-title">Questions founders <span class="gradient-text">actually ask</span></h1>
+      <p class="page-hero-sub">Straightforward answers to the most common questions about setup, security, model selection, and real-world usage.</p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top: var(--space-8);">
+    <div class="container" style="max-width: 860px;">
+
+      <!-- GENERAL -->
+      <div style="margin-bottom: var(--space-10);">
+        <span class="section-tag" style="margin-bottom: var(--space-6); display:block;">General</span>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-what">
+              What exactly is OpenClaw?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                OpenClaw is an open-source, local-first AI agent platform. Unlike cloud AI chatbots, it runs entirely on your own hardware — a laptop, Mac Mini, or VPS. It connects to your messaging apps (Telegram, WhatsApp, Discord) so you can interact with it naturally, and it executes real tasks: running shell commands, reading/writing files, browsing the web, and calling APIs. Think of it as a personal AI teammate that actually does work, not just responds.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-free">
+              Is OpenClaw free?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. OpenClaw itself is free and open-source (MIT License). The only cost is your AI model API usage — for example, Anthropic Claude or OpenAI GPT-4o charges per token. If you use Ollama with a local model, even this is free. Infrastructure costs (VPS, server) are optional and depend on your setup.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-why-local">
+              Why local-first? Why not just use a cloud AI service?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Cloud AI services are stateless and isolated — they can't access your files, run commands, or act proactively. OpenClaw runs on your hardware, which means: (1) your data never leaves your machine, (2) it has full access to your local environment, (3) it can run scheduled tasks 24/7 without a session, and (4) you control exactly what model it uses. It's the difference between a chatbot and an actual agent.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-audience">
+              Who is OpenClaw built for?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                OpenClaw is designed for founders, solo builders, indie hackers, technical operators, and AI-first teams. You need to be comfortable running a terminal command and following setup steps — but you don't need to write code to use it effectively. If you can install Node.js and type a few commands, you're good to start.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SETUP -->
+      <div style="margin-bottom: var(--space-10);">
+        <span class="section-tag" style="margin-bottom: var(--space-6); display:block;">Setup & Installation</span>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-how-long">
+              How long does setup actually take?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                For most people, 5–10 minutes from zero to a working Telegram bot. The onboarding wizard walks you through everything interactively. The most common time sink is creating a Telegram bot via BotFather (2 minutes) or gathering your API key. Discord takes a bit longer due to the Developer Portal setup, but still under 15 minutes total.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-node">
+              Why does it require Node.js v22.14+?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                OpenClaw uses modern JavaScript APIs that aren't available in older Node.js versions. Older versions cause silent failures — no helpful error messages, just a Gateway that doesn't start. Always run <code>node --version</code> first. We recommend v24.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-no-respond">
+              My agent isn't responding to messages. What do I check?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Check in this order: (1) Run <code>openclaw gateway status</code> — if the Gateway isn't running, start it. (2) Run <code>openclaw doctor</code> for a full diagnostic. (3) For Discord: verify Message Content Intent is enabled in the Developer Portal. (4) Check that your API key is valid and has quota remaining. (5) Open the Dashboard at <code>http://localhost:18789/ui</code> to see error logs.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-pairing-code">
+              What is the pairing code Telegram asks for?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                The pairing code is a security feature that prevents unauthorized users from interacting with your agent. When you connect a Telegram channel, OpenClaw sends a one-time code to your bot's chat. You enter this code during setup to confirm that you control both the CLI and the Telegram account. It's not something you create — it arrives in your Telegram chat.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MODELS -->
+      <div style="margin-bottom: var(--space-10);">
+        <span class="section-tag" style="margin-bottom: var(--space-6); display:block;">AI Models</span>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-which-model">
+              Which AI model should I use?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                For most founders: <strong>Anthropic Claude Sonnet</strong> gives the best balance of speed, reasoning, and cost. For coding-heavy tasks, Claude is particularly strong. For cost-sensitive setups, DeepSeek is excellent value. If data privacy is critical, use Ollama with a local model — completely free, no data leaves your machine. You can switch models at any time without losing context.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-local-model">
+              Can I use a local model with no API costs?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. Install Ollama (<code>ollama.com</code>), pull a model (e.g., <code>ollama pull llama3.3</code>), and select "Ollama" as your provider during OpenClaw setup. This is completely free and 100% private — zero data leaves your machine. Performance depends on your hardware. For most research and writing tasks, 7–13B parameter models work well.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-switch-model">
+              Can I switch models after setup?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. Edit your <code>AGENTS.md</code> file to change the model configuration, then restart the Gateway. You can also set different models per agent if you have multiple agents running.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECURITY -->
+      <div style="margin-bottom: var(--space-10);">
+        <span class="section-tag" style="margin-bottom: var(--space-6); display:block;">Security & Privacy</span>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-data-security">
+              Does my data get sent to OpenClaw servers?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                No. OpenClaw has no central server. All agent configuration, conversation history, files, and API keys stay on your machine. The only data sent externally is what you send to your chosen AI model provider (Anthropic, OpenAI, etc.) — governed by their privacy policies. If you use Ollama, nothing leaves your machine at all.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-main-account">
+              Can I connect my personal Telegram or WhatsApp?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We strongly recommend creating dedicated bot/service accounts instead. OpenClaw can execute shell commands and access files — you want that running under an isolated identity, not your primary personal account. For Telegram, create a new bot via @BotFather. For WhatsApp, get a dedicated SIM or number. This protects you from accidental data exposure and permission conflicts.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-skills-security">
+              Are Skills safe to run?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Built-in skills are safe. Community skills should be reviewed before use — check what tools they request access to and what instructions they include. Skills requesting <code>shell</code> access should be treated with extra caution: they can run arbitrary commands on your machine. Only install skills from trusted sources or review them yourself before activating.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- USAGE -->
+      <div style="margin-bottom: var(--space-10);">
+        <span class="section-tag" style="margin-bottom: var(--space-6); display:block;">Usage & Workflows</span>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-how-talk">
+              How do I actually interact with my agent?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Just message it like you'd message a person. "Research the top 5 alternatives to Linear." "Summarize my unread Slack messages." "Draft a cold email for this prospect." The agent picks the right skill, executes the task, and responds. No special commands or syntax required for basic usage.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-heartbeat">
+              Can my agent do things without me asking?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes — this is the heartbeat feature. Define scheduled tasks in your <code>SOUL.md</code> (e.g., "every morning at 7AM, send me a briefing"). The agent runs these autonomously and messages you with results. This is how you build a real 24/7 assistant rather than just a chatbot you have to poke.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-multiple-agents">
+              Can I run multiple agents for different purposes?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. OpenClaw supports multi-agent routing. You can have a "work" agent connected to Slack, a "personal" agent on Telegram, and a "coding" agent on Discord — all running simultaneously on the same machine, each with their own workspace, skills, and model configuration.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-24-7">
+              Does OpenClaw run 24/7 automatically?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                When installed with <code>--install-daemon</code>, OpenClaw registers as a system service and starts automatically on reboot. However, it only runs 24/7 if your machine is on 24/7. For true always-on, deploy on a VPS (DigitalOcean, Hetzner) or a dedicated home server. Don't rely on a laptop you take to meetings.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div style="text-align:center; padding: var(--space-12) 0; border-top: 1px solid var(--border-subtle); margin-top: var(--space-8);">
+        <h3 style="font-size: var(--text-2xl); color: var(--text-primary); margin-bottom: var(--space-3);">Still have questions?</h3>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Join the OpenClaw Discord — the community is active and founders help founders.</p>
+        <div style="display:flex; gap: var(--space-4); justify-content:center; flex-wrap:wrap;">
+          <a href="https://discord.com" class="btn btn-primary" id="faq-discord-btn" target="_blank" rel="noopener">Join Discord →</a>
+          <a href="setup.html" class="btn btn-ghost" id="faq-setup-btn">Start Setup</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex;"><span class="logo-icon">⚡</span><span class="logo-text">OpenClaw</span></a>
+          <p class="footer-tagline">Open-source local-first AI agent for founders and fast-moving teams.</p>
+          <div class="footer-social">
+            <a href="https://github.com" class="social-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://discord.com" class="social-link" target="_blank" rel="noopener">Discord</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#why">Why OpenClaw</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="usecases.html">Use Cases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Guides</h4>
+          <ul class="footer-links">
+            <li><a href="setup.html">Setup Guide</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Community</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://discord.com" target="_blank">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OpenClaw. Open-source under MIT License.</p>
+        <p class="footer-disclaimer">Built for founders who move fast.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

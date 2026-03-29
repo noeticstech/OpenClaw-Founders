@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — OpenClaw</title>
+  <meta name="description" content="OpenClaw documentation. Learn about Skills, Channels, Workspaces, multi-agent routing, and advanced configuration for your autonomous AI agent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⚡</span><span class="logo-text">OpenClaw</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#why" class="nav-link">Why</a></li>
+        <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="setup.html" class="nav-link">Setup</a></li>
+        <li><a href="usecases.html" class="nav-link">Use Cases</a></li>
+        <li><a href="docs.html" class="nav-link" style="color:var(--accent-primary)">Docs</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="setup.html" class="btn btn-primary btn-sm">Get Started →</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#why" class="mobile-link">Why OpenClaw</a>
+      <a href="setup.html" class="mobile-link">Setup Guide</a>
+      <a href="usecases.html" class="mobile-link">Use Cases</a>
+      <a href="docs.html" class="mobile-link">Docs</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag page-hero-tag">Documentation</span>
+      <h1 class="page-hero-title"><span class="gradient-text">OpenClaw</span> Reference Guide</h1>
+      <p class="page-hero-sub">Everything you need to configure, extend, and operate your autonomous AI agent. Full technical reference for builders.</p>
+    </div>
+  </div>
+
+  <!-- DOCS LAYOUT -->
+  <div class="container">
+    <div class="docs-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="setup-sidebar">
+        <nav class="sidebar-nav">
+          <p class="sidebar-nav-title">Sections</p>
+          <a href="#overview" class="sidebar-link active">Overview</a>
+          <a href="#gateway" class="sidebar-link">Gateway</a>
+          <a href="#channels" class="sidebar-link">Channels</a>
+          <a href="#workspace" class="sidebar-link">Workspace</a>
+          <a href="#skills" class="sidebar-link">Skills</a>
+          <a href="#multi-agent" class="sidebar-link">Multi-Agent</a>
+          <a href="#heartbeat" class="sidebar-link">Heartbeat</a>
+          <a href="#cli" class="sidebar-link">CLI Reference</a>
+          <a href="#security" class="sidebar-link">Security</a>
+        </nav>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="docs-content">
+
+        <section id="overview" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem); padding-top: var(--space-8);">
+          <h2>Overview</h2>
+          <p>OpenClaw is an open-source, local-first autonomous AI agent platform. It runs as a background process on your hardware, connects to your messaging apps of choice, and executes real tasks via a modular Skills system.</p>
+          <p>The core architecture has three layers:</p>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-4); margin: var(--space-4) 0 var(--space-6);">
+            <div style="padding: var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 1.5rem; margin-bottom: var(--space-3);">🔌</div>
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-2);">Channels</h3>
+              <p style="font-size: var(--text-xs);">Your messaging apps: Telegram, WhatsApp, Discord, Slack. How you talk to the agent.</p>
+            </div>
+            <div style="padding: var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 1.5rem; margin-bottom: var(--space-3);">⚙️</div>
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-2);">Gateway</h3>
+              <p style="font-size: var(--text-xs);">The local control plane. Manages sessions, routes messages, and dispatches tasks.</p>
+            </div>
+            <div style="padding: var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 1.5rem; margin-bottom: var(--space-3);">🧩</div>
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-2);">Skills</h3>
+              <p style="font-size: var(--text-xs);">Markdown-defined capabilities stored in your workspace. What the agent can do.</p>
+            </div>
+          </div>
+          <div class="callout callout-info">
+            <span class="callout-icon">ℹ️</span>
+            <div class="callout-content">
+              <strong>Local-first by design</strong>
+              Everything runs on your machine. Your API keys, conversation history, files, and agent configurations never leave your infrastructure unless you explicitly configure an external integration.
+            </div>
+          </div>
+        </section>
+
+        <section id="gateway" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Gateway</h2>
+          <p>The Gateway is the central process of OpenClaw. It listens on port <code>18789</code> by default and acts as the orchestration layer — receiving messages, managing agent context, dispatching skill execution, and returning responses.</p>
+          <h3>Managing the Gateway</h3>
+          <div class="terminal-window">
+            <div class="terminal-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="terminal-title">Gateway commands</span></div>
+            <div class="terminal-body">
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw gateway status</span>   <span class="comment"># Check if running</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw gateway start</span>    <span class="comment"># Start the gateway</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw gateway stop</span>     <span class="comment"># Stop the gateway</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw gateway restart</span>  <span class="comment"># Restart after config changes</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw dashboard</span>        <span class="comment"># Open browser UI</span></div>
+            </div>
+          </div>
+          <h3>Dashboard</h3>
+          <p>The dashboard (<code>http://localhost:18789/ui</code>) provides a visual interface for managing sessions, viewing conversation logs, checking agent status, and editing configuration without touching the CLI.</p>
+        </section>
+
+        <section id="channels" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Channels</h2>
+          <p>Channels are the connections between your messaging apps and your OpenClaw agent. You can connect multiple channels to the same agent, or route different channels to different agents.</p>
+          <h3>Adding a channel</h3>
+          <div class="terminal-window">
+            <div class="terminal-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div></div>
+            <div class="terminal-body">
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw channels add</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw channels list</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw channels remove [channel-id]</span></div>
+            </div>
+          </div>
+          <h3>Supported channels</h3>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); margin: var(--space-4) 0;">
+            <div style="padding: var(--space-4) var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display:grid; grid-template-columns: 140px 1fr; gap: var(--space-4); align-items:start;">
+              <div><strong style="color:var(--text-primary); font-size: var(--text-sm);">✈️ Telegram</strong><div style="font-size:var(--text-xs); color:var(--accent-green); margin-top:4px;">Recommended</div></div>
+              <div style="font-size: var(--text-sm); color: var(--text-secondary);">Uses official Bot API. Create a bot via @BotFather. Most reliable integration with lowest setup friction.</div>
+            </div>
+            <div style="padding: var(--space-4) var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display:grid; grid-template-columns: 140px 1fr; gap: var(--space-4); align-items:start;">
+              <div><strong style="color:var(--text-primary); font-size: var(--text-sm);">💬 WhatsApp</strong></div>
+              <div style="font-size: var(--text-sm); color: var(--text-secondary);">Uses WhatsApp Web protocol (Baileys library). QR code scan required. Use a dedicated number.</div>
+            </div>
+            <div style="padding: var(--space-4) var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display:grid; grid-template-columns: 140px 1fr; gap: var(--space-4); align-items:start;">
+              <div><strong style="color:var(--text-primary); font-size: var(--text-sm);">🎮 Discord</strong></div>
+              <div style="font-size: var(--text-sm); color: var(--text-secondary);">Discord Developer Portal bot. Requires "Message Content Intent" enabled. Works across servers.</div>
+            </div>
+            <div style="padding: var(--space-4) var(--space-5); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display:grid; grid-template-columns: 140px 1fr; gap: var(--space-4); align-items:start;">
+              <div><strong style="color:var(--text-primary); font-size: var(--text-sm);">💼 Slack</strong></div>
+              <div style="font-size: var(--text-sm); color: var(--text-secondary);">Slack App with Bot Token. Works in DMs and channels. Supports slash commands.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="workspace" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Workspace</h2>
+          <p>Each agent has a workspace directory — a local folder containing configuration files that define the agent's persona, behavior, and capabilities.</p>
+          <h3>File structure</h3>
+          <div class="code-block" style="padding: 1.25rem;">
+<pre style="font-size:0.8rem; color: var(--text-secondary); line-height: 1.9;">workspace/
+├── SOUL.md       ← Agent persona and system instructions
+├── AGENTS.md     ← Agent configuration and model settings  
+└── skills/
+    ├── research.md
+    ├── outreach.md
+    └── dev-ops.md</pre>
+          </div>
+          <h3>SOUL.md</h3>
+          <p>The <code>SOUL.md</code> file defines your agent's identity, tone, and core behaviors. Think of it as your agent's system prompt — but persistent and version-controlled.</p>
+          <div class="terminal-window">
+            <div class="terminal-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="terminal-title">Example SOUL.md</span></div>
+            <div class="terminal-body">
+              <div class="term-line" style="color: var(--text-secondary);"># Agent Identity</div>
+              <div class="term-line" style="color: var(--text-secondary);">You are Alex, a focused executive assistant for a B2B SaaS startup.</div>
+              <div class="term-line" style="color: var(--text-secondary);">You are precise, brief, and proactive. You ask clarifying questions</div>
+              <div class="term-line" style="color: var(--text-secondary);">when needed but always lean toward action.</div>
+              <div class="term-line"> </div>
+              <div class="term-line" style="color: var(--text-secondary);"># Heartbeat (runs daily at 7:00 AM)</div>
+              <div class="term-line" style="color: var(--text-secondary);">Send a morning briefing: today's calendar, top 3 priorities,</div>
+              <div class="term-line" style="color: var(--text-secondary);">any alerts from monitoring tools.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Skills</h2>
+          <p>Skills are Markdown files with YAML frontmatter that define a capability for your agent. Drop a file in <code>workspace/skills/</code> and your agent automatically discovers it.</p>
+          <h3>Skill anatomy</h3>
+          <div class="terminal-window">
+            <div class="terminal-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="terminal-title">skills/research.md</span></div>
+            <div class="terminal-body">
+              <div class="term-line" style="color: var(--accent-yellow);">---</div>
+              <div class="term-line" style="color: var(--accent-hover);">name: Competitive Research</div>
+              <div class="term-line" style="color: var(--accent-hover);">description: Research competitors and return structured analysis</div>
+              <div class="term-line" style="color: var(--accent-hover);">tools:</div>
+              <div class="term-line" style="color: var(--accent-hover); padding-left: 1rem;">- web_search</div>
+              <div class="term-line" style="color: var(--accent-hover); padding-left: 1rem;">- web_browser</div>
+              <div class="term-line" style="color: var(--accent-hover); padding-left: 1rem;">- file_write</div>
+              <div class="term-line" style="color: var(--accent-yellow);">---</div>
+              <div class="term-line"> </div>
+              <div class="term-line" style="color: var(--text-secondary);"># How to use this skill</div>
+              <div class="term-line" style="color: var(--text-secondary);">When asked to research competitors for a specific product or market:</div>
+              <div class="term-line" style="color: var(--text-secondary);">1. Search Product Hunt, G2, Capterra, and relevant subreddits</div>
+              <div class="term-line" style="color: var(--text-secondary);">2. Identify top 5 competitors with features, pricing, and G2 score</div>
+              <div class="term-line" style="color: var(--text-secondary);">3. Identify positioning gaps and opportunities</div>
+              <div class="term-line" style="color: var(--text-secondary);">4. Save analysis as PDF in workspace/research/</div>
+            </div>
+          </div>
+          <h3>Available tools</h3>
+          <div style="display:grid; grid-template-columns: repeat(2,1fr); gap: var(--space-3); margin: var(--space-4) 0;">
+            <div style="padding: var(--space-3) var(--space-4); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <code style="font-size: var(--text-xs);">web_search</code> — Search the web for information
+            </div>
+            <div style="padding: var(--space-3) var(--space-4); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <code style="font-size: var(--text-xs);">web_browser</code> — Browse and extract from URLs
+            </div>
+            <div style="padding: var(--space-3) var(--space-4); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <code style="font-size: var(--text-xs);">file_read</code> — Read local files
+            </div>
+            <div style="padding: var(--space-3) var(--space-4); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <code style="font-size: var(--text-xs);">file_write</code> — Create and write files
+            </div>
+            <div style="padding: var(--space-3) var(--space-4); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <code style="font-size: var(--text-xs);">shell</code> — Execute shell commands
+            </div>
+            <div style="padding: var(--space-3) var(--space-4); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+              <code style="font-size: var(--text-xs);">http_request</code> — Call external APIs
+            </div>
+          </div>
+        </section>
+
+        <section id="multi-agent" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Multi-Agent Routing</h2>
+          <p>OpenClaw supports multiple isolated agents on a single installation. You can route different channels to different agents — for example, a "work" agent on Slack and a "personal" agent on Telegram.</p>
+          <div class="terminal-window">
+            <div class="terminal-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div></div>
+            <div class="terminal-body">
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw agents create --name work-assistant</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw agents bind --channel slack-work --agent work-assistant</span></div>
+              <div class="term-line"><span class="prompt-sym">$</span><span class="cmd">openclaw agents list</span></div>
+            </div>
+          </div>
+          <p>Each agent has its own workspace directory, SOUL.md, and skills folder — completely isolated.</p>
+        </section>
+
+        <section id="heartbeat" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Heartbeat Scheduler</h2>
+          <p>The heartbeat system allows your agent to perform tasks autonomously on a schedule — without you sending a message. Define recurring tasks directly in your <code>SOUL.md</code>.</p>
+          <div class="terminal-window">
+            <div class="terminal-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="terminal-title">SOUL.md heartbeat example</span></div>
+            <div class="terminal-body">
+              <div class="term-line" style="color: var(--text-secondary);"># Heartbeat Tasks</div>
+              <div class="term-line" style="color: var(--text-secondary);">## Daily at 07:00</div>
+              <div class="term-line" style="color: var(--text-secondary);">- Read today's calendar from Google Calendar</div>
+              <div class="term-line" style="color: var(--text-secondary);">- Check Slack for any urgent messages</div>
+              <div class="term-line" style="color: var(--text-secondary);">- Send briefing to my Telegram</div>
+              <div class="term-line"> </div>
+              <div class="term-line" style="color: var(--text-secondary);">## Weekly on Monday at 09:00</div>
+              <div class="term-line" style="color: var(--text-secondary);">- Run competitor monitoring</div>
+              <div class="term-line" style="color: var(--text-secondary);">- Generate weekly metrics summary</div>
+              <div class="term-line" style="color: var(--text-secondary);">- Email report to team</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cli" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>CLI Reference</h2>
+          <div style="display:flex; flex-direction:column; gap:var(--space-2); margin: var(--space-4) 0;">
+            <div style="display:grid; grid-template-columns: 260px 1fr; gap:var(--space-4); padding: var(--space-3) var(--space-4); background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <code style="font-size:var(--text-xs);">openclaw onboard</code>
+              <span style="font-size:var(--text-sm); color:var(--text-secondary);">Run the interactive setup wizard</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 260px 1fr; gap:var(--space-4); padding: var(--space-3) var(--space-4); background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <code style="font-size:var(--text-xs);">openclaw gateway status</code>
+              <span style="font-size:var(--text-sm); color:var(--text-secondary);">Check gateway health and status</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 260px 1fr; gap:var(--space-4); padding: var(--space-3) var(--space-4); background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <code style="font-size:var(--text-xs);">openclaw channels add</code>
+              <span style="font-size:var(--text-sm); color:var(--text-secondary);">Add a new messaging channel</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 260px 1fr; gap:var(--space-4); padding: var(--space-3) var(--space-4); background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <code style="font-size:var(--text-xs);">openclaw agents bind</code>
+              <span style="font-size:var(--text-sm); color:var(--text-secondary);">Bind a channel to a specific agent</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 260px 1fr; gap:var(--space-4); padding: var(--space-3) var(--space-4); background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <code style="font-size:var(--text-xs);">openclaw doctor</code>
+              <span style="font-size:var(--text-sm); color:var(--text-secondary);">Run full health check and diagnostics</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 260px 1fr; gap:var(--space-4); padding: var(--space-3) var(--space-4); background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <code style="font-size:var(--text-xs);">openclaw dashboard</code>
+              <span style="font-size:var(--text-sm); color:var(--text-secondary);">Open the browser-based control panel</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="security" style="scroll-margin-top: calc(var(--nav-height) + 1.25rem);">
+          <h2>Security Best Practices</h2>
+          <div class="callout callout-danger">
+            <span class="callout-icon">⚠️</span>
+            <div class="callout-content">
+              <strong>OpenClaw has system access</strong>
+              It can read files, run shell commands, and call APIs. Treat it like giving root access to a trusted employee — configure it carefully and isolate it from sensitive personal accounts.
+            </div>
+          </div>
+          <ul>
+            <li>Always use dedicated bot accounts — never your personal Telegram/WhatsApp/Discord</li>
+            <li>Run on isolated hardware or a sandboxed VM for production use</li>
+            <li>Review skills before activating them, especially those using the <code>shell</code> tool</li>
+            <li>Run <code>openclaw doctor</code> regularly to detect misconfigured DM policies</li>
+            <li>Use the Dashboard to audit agent activity and review conversation logs</li>
+            <li>Rotate API keys periodically and use environment variables rather than hardcoding</li>
+          </ul>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex;"><span class="logo-icon">⚡</span><span class="logo-text">OpenClaw</span></a>
+          <p class="footer-tagline">Open-source local-first AI agent for founders and fast-moving teams.</p>
+          <div class="footer-social">
+            <a href="https://github.com" class="social-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://discord.com" class="social-link" target="_blank" rel="noopener">Discord</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#why">Why OpenClaw</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="usecases.html">Use Cases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Guides</h4>
+          <ul class="footer-links">
+            <li><a href="setup.html">Setup Guide</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Community</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://discord.com" target="_blank">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OpenClaw. Open-source under MIT License.</p>
+        <p class="footer-disclaimer">Built for founders who move fast.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

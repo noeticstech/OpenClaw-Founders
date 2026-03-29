@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw — Your Autonomous AI Agent, Running Locally</title>
+  <meta name="description" content="OpenClaw is the open-source, local-first AI agent platform for founders and fast-moving teams. Connect your messaging apps, define skills, and let your AI run tasks autonomously." />
+  <meta property="og:title" content="OpenClaw — Your Autonomous AI Agent, Running Locally" />
+  <meta property="og:description" content="One command to install. Runs on your hardware. Works in Telegram, WhatsApp, Discord. Built for founders who move fast." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" id="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">OpenClaw</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#why" class="nav-link">Why</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="setup.html" class="nav-link">Setup</a></li>
+        <li><a href="usecases.html" class="nav-link">Use Cases</a></li>
+        <li><a href="docs.html" class="nav-link">Docs</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="setup.html" class="btn btn-primary btn-sm" id="nav-cta">Get Started →</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#why" class="mobile-link">Why OpenClaw</a>
+      <a href="#how-it-works" class="mobile-link">How It Works</a>
+      <a href="setup.html" class="mobile-link">Setup Guide</a>
+      <a href="usecases.html" class="mobile-link">Use Cases</a>
+      <a href="docs.html" class="mobile-link">Docs</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="setup.html" class="btn btn-primary" style="margin-top:1rem;">Get Started →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge" id="hero-badge">
+          <span class="badge-dot"></span>
+          Open Source · Local-First · Model-Agnostic
+        </div>
+        <h1 class="hero-headline" id="hero-headline">
+          Your AI Agent.<br/>
+          <span class="gradient-text">Running on Your Terms.</span>
+        </h1>
+        <p class="hero-sub" id="hero-sub">
+          OpenClaw is an autonomous AI agent platform that runs on your hardware, 
+          connects to your messaging apps, and executes real tasks — without sending your data anywhere.
+        </p>
+        <div class="hero-actions" id="hero-actions">
+          <a href="setup.html" class="btn btn-primary btn-lg" id="hero-cta-primary">
+            Start Setup in 5 Minutes
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="usecases.html" class="btn btn-ghost btn-lg" id="hero-cta-secondary">
+            See Use Cases
+          </a>
+        </div>
+        <div class="hero-terminal" id="hero-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">Terminal</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="term-prompt">$</span>
+              <span class="term-cmd typed" id="typed-cmd">openclaw onboard --install-daemon</span>
+              <span class="term-cursor"></span>
+            </div>
+            <div class="terminal-output">
+              <div class="term-out">✓ Node.js v24.0.0 detected</div>
+              <div class="term-out">✓ Gateway started on port 18789</div>
+              <div class="term-out"><span class="term-accent">?</span> Select AI provider: <span class="term-select">Anthropic Claude</span></div>
+              <div class="term-out">✓ API key configured</div>
+              <div class="term-out"><span class="term-accent">?</span> Connect a channel: <span class="term-select">Telegram</span></div>
+              <div class="term-out">✓ Channel paired successfully</div>
+              <div class="term-out term-success">🚀 OpenClaw is running. Message your agent!</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">1</span>
+            <span class="stat-label">command to install</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">messaging apps</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">runs on your hardware</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">extensible skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED BY / COMPATIBLE WITH -->
+  <section class="compat-strip">
+    <div class="container">
+      <p class="compat-label">Works with your stack</p>
+      <div class="compat-logos">
+        <div class="compat-item">
+          <span class="compat-icon">🤖</span>
+          <span>Claude</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">🧠</span>
+          <span>GPT-4o</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">🔵</span>
+          <span>DeepSeek</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">🦙</span>
+          <span>Ollama (local)</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">✈️</span>
+          <span>Telegram</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">💬</span>
+          <span>WhatsApp</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">🎮</span>
+          <span>Discord</span>
+        </div>
+        <div class="compat-item">
+          <span class="compat-icon">💼</span>
+          <span>Slack</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY OPENCLAW -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Problem</span>
+        <h2 class="section-title">Founders are stuck in a broken loop</h2>
+        <p class="section-sub">Cloud AI tools are fragmented. Context doesn't persist. Your data leaves your machine. Nothing actually does the work — it just suggests it.</p>
+      </div>
+      <div class="problem-vs">
+        <div class="problem-col">
+          <div class="problem-header bad">
+            <span>❌ Without OpenClaw</span>
+          </div>
+          <ul class="problem-list bad-list">
+            <li>5 tabs, 3 subscriptions, zero continuity</li>
+            <li>Copy-paste between tools all day</li>
+            <li>Data uploaded to servers you don't control</li>
+            <li>Tasks start but never finish autonomously</li>
+            <li>Setup takes days. Value takes weeks.</li>
+            <li>Context is lost after every conversation</li>
+          </ul>
+        </div>
+        <div class="vs-divider">
+          <div class="vs-line"></div>
+          <span class="vs-badge">VS</span>
+          <div class="vs-line"></div>
+        </div>
+        <div class="problem-col">
+          <div class="problem-header good">
+            <span>✅ With OpenClaw</span>
+          </div>
+          <ul class="problem-list good-list">
+            <li>One agent. One message. Work gets done.</li>
+            <li>Runs on your hardware, always on</li>
+            <li>Your data never leaves your machine</li>
+            <li>Autonomous task execution via Skills</li>
+            <li>Setup in 5 minutes. Value in minutes.</li>
+            <li>Persistent memory and context across sessions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-props">
+        <div class="value-card" id="vp-1">
+          <div class="value-icon">🔒</div>
+          <h3>Private by design</h3>
+          <p>Runs entirely on your infrastructure. API keys and files never leave your machine. No cloud dependency, no data risk.</p>
+        </div>
+        <div class="value-card" id="vp-2">
+          <div class="value-icon">⚡</div>
+          <h3>Actually executes</h3>
+          <p>Not just a chatbot. OpenClaw reads files, runs shell commands, browses the web, calls APIs. It does things.</p>
+        </div>
+        <div class="value-card" id="vp-3">
+          <div class="value-icon">💬</div>
+          <h3>Works in your inbox</h3>
+          <p>Chat with it via Telegram, WhatsApp, or Discord. No new UI to learn. Your existing apps, now powered by AI.</p>
+        </div>
+        <div class="value-card" id="vp-4">
+          <div class="value-icon">🧩</div>
+          <h3>Extensible Skills</h3>
+          <p>Define custom skills as Markdown files. The agent learns new capabilities without code changes.</p>
+        </div>
+        <div class="value-card" id="vp-5">
+          <div class="value-icon">🔄</div>
+          <h3>Always-on automation</h3>
+          <p>Heartbeat scheduler lets your agent act proactively — daily reports, monitoring, scheduled outreach — without you asking.</p>
+        </div>
+        <div class="value-card" id="vp-6">
+          <div class="value-icon">🎛️</div>
+          <h3>Model-agnostic</h3>
+          <p>Claude, GPT-4o, DeepSeek, or local models via Ollama. You choose the model per task or per agent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-dark" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Architecture</span>
+        <h2 class="section-title">How OpenClaw works</h2>
+        <p class="section-sub">From install to first task in minutes. Here's exactly what happens under the hood.</p>
+      </div>
+      <div class="arch-flow">
+        <div class="arch-step" id="arch-1">
+          <div class="arch-num">01</div>
+          <div class="arch-body">
+            <h3>Install the Gateway</h3>
+            <p>One command downloads OpenClaw and starts the local Gateway — your agent's control plane that runs as a background daemon.</p>
+            <div class="code-block">
+              <code>openclaw onboard --install-daemon</code>
+            </div>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">↓</div>
+        </div>
+        <div class="arch-step" id="arch-2">
+          <div class="arch-num">02</div>
+          <div class="arch-body">
+            <h3>Connect an AI model</h3>
+            <p>Pick your preferred LLM provider — Anthropic, OpenAI, DeepSeek, or run a local model with Ollama. Your keys stay on-device.</p>
+            <div class="provider-chips">
+              <span class="chip">Claude</span>
+              <span class="chip">GPT-4o</span>
+              <span class="chip">DeepSeek</span>
+              <span class="chip chip-dim">+ Custom</span>
+            </div>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">↓</div>
+        </div>
+        <div class="arch-step" id="arch-3">
+          <div class="arch-num">03</div>
+          <div class="arch-body">
+            <h3>Pair a messaging channel</h3>
+            <p>Connect Telegram (BotFather token), WhatsApp (QR code), Discord, or Slack. Instantly talk to your agent from any device.</p>
+            <div class="channel-row">
+              <span class="channel-badge">✈️ Telegram</span>
+              <span class="channel-badge">💬 WhatsApp</span>
+              <span class="channel-badge">🎮 Discord</span>
+            </div>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">↓</div>
+        </div>
+        <div class="arch-step" id="arch-4">
+          <div class="arch-num">04</div>
+          <div class="arch-body">
+            <h3>Define skills &amp; workspace</h3>
+            <p>Create a SOUL.md to set the agent's persona and add Skills markdown files to teach it custom capabilities for your workflow.</p>
+            <div class="file-tree">
+              <div class="file-line"><span class="file-dir">workspace/</span></div>
+              <div class="file-line indent"><span class="file-md">SOUL.md</span> <span class="file-comment">— persona &amp; instructions</span></div>
+              <div class="file-line indent"><span class="file-md">AGENTS.md</span> <span class="file-comment">— agent config</span></div>
+              <div class="file-line indent"><span class="file-dir">skills/</span></div>
+              <div class="file-line indent2"><span class="file-md">research.md</span></div>
+              <div class="file-line indent2"><span class="file-md">outreach.md</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">↓</div>
+        </div>
+        <div class="arch-step arch-step-final" id="arch-5">
+          <div class="arch-num num-accent">05</div>
+          <div class="arch-body">
+            <h3>Message. Delegate. Ship.</h3>
+            <p>Just send a message. OpenClaw picks the right skill, executes the task, and sends back the result. It works while you sleep.</p>
+            <div class="chat-demo">
+              <div class="chat-bubble user-bubble">Research competitors for our CRM pitch deck</div>
+              <div class="chat-bubble agent-bubble">
+                <span class="agent-indicator">OpenClaw</span>
+                On it. Scanning 12 sources across Product Hunt, G2, and Crunchbase…<br/>
+                <em>✓ Done in 4 minutes. Summary attached.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS / CAPABILITIES -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Extensible by Design</span>
+        <h2 class="section-title">Skills make OpenClaw unstoppable</h2>
+        <p class="section-sub">Skills are lightweight Markdown files that define new capabilities. No code required. Drop a file in your workspace and your agent instantly knows what to do.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" id="skill-research">
+          <div class="skill-icon">🔍</div>
+          <h3>Research</h3>
+          <p>Deep-dive competitor analysis, market sizing, technical documentation scanning. Synthesizes sources automatically.</p>
+          <div class="skill-tag">Built-in</div>
+        </div>
+        <div class="skill-card" id="skill-files">
+          <div class="skill-icon">📁</div>
+          <h3>File Operations</h3>
+          <p>Read, write, organize, and search across local and cloud files. Process CSVs, PDFs, and project folders.</p>
+          <div class="skill-tag">Built-in</div>
+        </div>
+        <div class="skill-card" id="skill-shell">
+          <div class="skill-icon">⚙️</div>
+          <h3>Shell Execution</h3>
+          <p>Run any CLI command on your machine. Build, test, deploy, or monitor servers directly from your chat.</p>
+          <div class="skill-tag">Built-in</div>
+        </div>
+        <div class="skill-card" id="skill-web">
+          <div class="skill-icon">🌐</div>
+          <h3>Web Browsing</h3>
+          <p>Browse, scrape, and extract information from any webpage. No manual copy-paste. Just ask and get results.</p>
+          <div class="skill-tag">Built-in</div>
+        </div>
+        <div class="skill-card" id="skill-sched">
+          <div class="skill-icon">⏰</div>
+          <h3>Heartbeat Scheduler</h3>
+          <p>Define recurring tasks. Daily standup summaries, weekly reports, system health checks — all autonomous.</p>
+          <div class="skill-tag">Built-in</div>
+        </div>
+        <div class="skill-card" id="skill-api">
+          <div class="skill-icon">🔗</div>
+          <h3>API Integration</h3>
+          <p>Call any REST API. Connect CRMs, analytics tools, databases, or notifications services via custom skills.</p>
+          <div class="skill-tag">Custom</div>
+        </div>
+        <div class="skill-card" id="skill-crm">
+          <div class="skill-icon">📊</div>
+          <h3>CRM &amp; Outreach</h3>
+          <p>Automatically update records, draft personalized emails, and manage lead pipelines without lifting a finger.</p>
+          <div class="skill-tag">Custom</div>
+        </div>
+        <div class="skill-card" id="skill-code">
+          <div class="skill-icon">💻</div>
+          <h3>Code Review</h3>
+          <p>Review pull requests, scan logs, run tests, and create GitHub issues. Built for technical operators.</p>
+          <div class="skill-tag">Custom</div>
+        </div>
+      </div>
+      <div class="skills-create-cta">
+        <div class="skills-create-inner">
+          <div>
+            <h3>Create your own skill in seconds</h3>
+            <p>Skills are just Markdown files with structured frontmatter. No SDK. No boilerplate.</p>
+          </div>
+          <a href="docs.html" class="btn btn-outline" id="skills-docs-btn">View Skill Docs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES PREVIEW -->
+  <section class="section section-dark" id="use-cases-preview">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Workflows</span>
+        <h2 class="section-title">What founders actually use it for</h2>
+        <p class="section-sub">Not theoretical demos. These are real workflows from founders running OpenClaw in production today.</p>
+      </div>
+      <div class="usecase-tabs" id="usecase-tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="founder" id="tab-founder">Founder Ops</button>
+          <button class="tab-btn" data-tab="devops" id="tab-devops">Dev &amp; CI/CD</button>
+          <button class="tab-btn" data-tab="research" id="tab-research">Research</button>
+          <button class="tab-btn" data-tab="sales" id="tab-sales">Sales &amp; CRM</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" id="panel-founder">
+            <div class="usecase-content">
+              <div class="usecase-text">
+                <h3>Your personal founder AI, always on</h3>
+                <p>Run OpenClaw on a Mac Mini or VPS. Connect Telegram. Now you have a 24/7 executive assistant that never sleeps, never bills by the hour, and works exactly how you train it to.</p>
+                <ul class="usecase-list">
+                  <li>Daily standup summaries from Slack and email</li>
+                  <li>Competitor monitoring and weekly briefings</li>
+                  <li>Burn rate and runway calculations from your spreadsheets</li>
+                  <li>Meeting prep from calendar invites</li>
+                  <li>Draft investor updates from your notes</li>
+                </ul>
+                <a href="usecases.html#founder" class="btn btn-ghost btn-sm" id="uc-founder-link">Explore founder workflows →</a>
+              </div>
+              <div class="usecase-visual">
+                <div class="message-flow">
+                  <div class="msg-item msg-user">What's our burn rate this week?</div>
+                  <div class="msg-item msg-agent">Reading expenses from Notion... Calculated. Burn: $18,400/wk. Runway: 14.2 months at current rate. 📊</div>
+                  <div class="msg-item msg-user">Draft an update email for investors</div>
+                  <div class="msg-item msg-agent">Draft ready. Sent to your drafts folder. Want me to also schedule for Tuesday morning?</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-devops">
+            <div class="usecase-content">
+              <div class="usecase-text">
+                <h3>Automate your dev operations</h3>
+                <p>Connect OpenClaw to your GitHub, deployment scripts, and monitoring stack. Let it watch your CI/CD pipeline and tell you when things break — or fix them automatically.</p>
+                <ul class="usecase-list">
+                  <li>Review PRs and catch common issues</li>
+                  <li>Monitor Sentry and auto-create tickets</li>
+                  <li>Run test suites via shell commands</li>
+                  <li>Deploy to staging on command</li>
+                  <li>Daily log summaries for on-call handoffs</li>
+                </ul>
+                <a href="usecases.html#devops" class="btn btn-ghost btn-sm" id="uc-devops-link">Explore dev workflows →</a>
+              </div>
+              <div class="usecase-visual">
+                <div class="message-flow">
+                  <div class="msg-item msg-agent">🚨 Sentry alert: 142 errors from payment module in last 10 min</div>
+                  <div class="msg-item msg-user">Investigate and create a GitHub issue</div>
+                  <div class="msg-item msg-agent">Root cause: null pointer on expired session token. Issue #847 created. PR branch opened. Fix ready for review.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-research">
+            <div class="usecase-content">
+              <div class="usecase-text">
+                <h3>Deep research, synthesized fast</h3>
+                <p>Stop spending hours on competitive research. OpenClaw can scan dozens of sources, pull structured data, and deliver a clean briefing — while you focus on building.</p>
+                <ul class="usecase-list">
+                  <li>Competitor landscape analysis</li>
+                  <li>Market sizing from public data</li>
+                  <li>Technical documentation synthesis</li>
+                  <li>Industry news monitoring and digest</li>
+                  <li>Investor research before pitches</li>
+                </ul>
+                <a href="usecases.html#research" class="btn btn-ghost btn-sm" id="uc-research-link">Explore research workflows →</a>
+              </div>
+              <div class="usecase-visual">
+                <div class="message-flow">
+                  <div class="msg-item msg-user">Give me a competitor analysis for our product hunt launch next week</div>
+                  <div class="msg-item msg-agent">Scanning Product Hunt, G2, Capterra, 8 subreddits, and 3 industry newsletters... Done. 14 competitors mapped. Top 3 with feature gaps highlighted. PDF ready.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-sales">
+            <div class="usecase-content">
+              <div class="usecase-text">
+                <h3>Autonomous sales operations</h3>
+                <p>Build an SDR agent that finds leads, drafts personalized outreach, follows up on schedule, and logs everything to your CRM — without hiring anyone.</p>
+                <ul class="usecase-list">
+                  <li>Lead identification from target criteria</li>
+                  <li>Personalized cold email drafting</li>
+                  <li>Follow-up sequence management</li>
+                  <li>CRM updates and pipeline maintenance</li>
+                  <li>Reply sentiment analysis and prioritization</li>
+                </ul>
+                <a href="usecases.html#sales" class="btn btn-ghost btn-sm" id="uc-sales-link">Explore sales workflows →</a>
+              </div>
+              <div class="usecase-visual">
+                <div class="message-flow">
+                  <div class="msg-item msg-user">Find 20 fintech startups raising Series A and draft outreach</div>
+                  <div class="msg-item msg-agent">Found 23 matching companies on Crunchbase. 20 outreach emails drafted with personalized hooks. CRM updated. Want to review before sending?</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="usecase-all-cta">
+        <a href="usecases.html" class="btn btn-primary" id="all-usecases-btn">View all use cases →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON PITFALLS -->
+  <section class="section" id="pitfalls">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Don't Make These Mistakes</span>
+        <h2 class="section-title">What trips people up during setup</h2>
+        <p class="section-sub">Most setup failures happen in the first 30 minutes. Here's what to watch for.</p>
+      </div>
+      <div class="pitfalls-grid">
+        <div class="pitfall-card" id="pitfall-1">
+          <div class="pitfall-header">
+            <span class="pitfall-icon">⚠️</span>
+            <h3>Wrong Node.js version</h3>
+          </div>
+          <p>OpenClaw requires Node.js v22.14+ (v24 recommended). Older versions cause silent failures during gateway startup.</p>
+          <div class="pitfall-fix">
+            <span class="fix-label">Fix:</span>
+            <code>node --version</code> → upgrade if below v22.14
+          </div>
+        </div>
+        <div class="pitfall-card" id="pitfall-2">
+          <div class="pitfall-header">
+            <span class="pitfall-icon">⚠️</span>
+            <h3>Running on your main account</h3>
+          </div>
+          <p>Never connect OpenClaw to your primary personal Telegram, WhatsApp, or GitHub. Use dedicated bot accounts to isolate access.</p>
+          <div class="pitfall-fix">
+            <span class="fix-label">Fix:</span>
+            Create isolated bot/service accounts before onboarding
+          </div>
+        </div>
+        <div class="pitfall-card" id="pitfall-3">
+          <div class="pitfall-header">
+            <span class="pitfall-icon">⚠️</span>
+            <h3>Gateway not running</h3>
+          </div>
+          <p>If your agent stops responding, the Gateway daemon may have crashed. Always verify it's running before debugging further.</p>
+          <div class="pitfall-fix">
+            <span class="fix-label">Fix:</span>
+            <code>openclaw gateway status</code> → restart if needed
+          </div>
+        </div>
+        <div class="pitfall-card" id="pitfall-4">
+          <div class="pitfall-header">
+            <span class="pitfall-icon">⚠️</span>
+            <h3>Running on a primary laptop</h3>
+          </div>
+          <p>OpenClaw is always-on. Running it on your daily laptop means it stops when you close the lid. Use a Mac Mini, VPS, or home server.</p>
+          <div class="pitfall-fix">
+            <span class="fix-label">Fix:</span>
+            Deploy on a dedicated always-on machine for 24/7 operation
+          </div>
+        </div>
+        <div class="pitfall-card" id="pitfall-5">
+          <div class="pitfall-header">
+            <span class="pitfall-icon">⚠️</span>
+            <h3>Discord Intent not enabled</h3>
+          </div>
+          <p>Discord requires "Message Content Intent" enabled in the Developer Portal. Missing this causes bot silence — no errors thrown.</p>
+          <div class="pitfall-fix">
+            <span class="fix-label">Fix:</span>
+            Enable Message Content Intent in Discord Developer Portal
+          </div>
+        </div>
+        <div class="pitfall-card" id="pitfall-6">
+          <div class="pitfall-header">
+            <span class="pitfall-icon">⚠️</span>
+            <h3>Skills not discovered</h3>
+          </div>
+          <p>Skills must live in your workspace <code>skills/</code> folder and have correct frontmatter. Misconfigured files are silently ignored.</p>
+          <div class="pitfall-fix">
+            <span class="fix-label">Fix:</span>
+            Run <code>openclaw doctor</code> to validate your workspace
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SETUP CTA -->
+  <section class="section section-dark" id="quick-setup">
+    <div class="container">
+      <div class="setup-cta-block">
+        <div class="setup-cta-text">
+          <span class="section-tag">Get Moving</span>
+          <h2 class="section-title">From zero to running in 5 minutes</h2>
+          <p class="section-sub">We've documented every step. No fluff, no gaps. Just a clear path to your first working agent.</p>
+        </div>
+        <div class="setup-steps-quick">
+          <div class="qstep">
+            <span class="qstep-num">1</span>
+            <div>
+              <strong>Install Node.js v24</strong>
+              <p>nodejs.org or <code>nvm install 24</code></p>
+            </div>
+          </div>
+          <div class="qstep">
+            <span class="qstep-num">2</span>
+            <div>
+              <strong>Run the installer</strong>
+              <p><code>openclaw onboard --install-daemon</code></p>
+            </div>
+          </div>
+          <div class="qstep">
+            <span class="qstep-num">3</span>
+            <div>
+              <strong>Connect a channel</strong>
+              <p>Follow prompts to pair Telegram or WhatsApp</p>
+            </div>
+          </div>
+          <div class="qstep">
+            <span class="qstep-num">4</span>
+            <div>
+              <strong>Send your first message</strong>
+              <p>Your agent is live. Start delegating.</p>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top: 2.5rem;">
+          <a href="setup.html" class="btn btn-primary btn-lg" id="setup-full-guide-btn">Full Setup Guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: 1rem; display:inline-flex;">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">OpenClaw</span>
+          </a>
+          <p class="footer-tagline">Open-source local-first AI agent for founders and fast-moving teams.</p>
+          <div class="footer-social">
+            <a href="https://github.com" class="social-link" id="github-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://twitter.com" class="social-link" id="twitter-link" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://discord.com" class="social-link" id="discord-link" target="_blank" rel="noopener">Discord</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="#why">Why OpenClaw</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="usecases.html">Use Cases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Guides</h4>
+          <ul class="footer-links">
+            <li><a href="setup.html">Setup Guide</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#pitfalls">Common Pitfalls</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Community</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://discord.com" target="_blank" rel="noopener">Discord Server</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OpenClaw. Open-source under MIT License.</p>
+        <p class="footer-disclaimer">Built for founders who move fast.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

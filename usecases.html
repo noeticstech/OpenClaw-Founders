@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use Cases — OpenClaw</title>
+  <meta name="description" content="Real workflow examples for OpenClaw. See how founders, developers, and operators use autonomous AI agents for sales, research, DevOps, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⚡</span><span class="logo-text">OpenClaw</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#why" class="nav-link">Why</a></li>
+        <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="setup.html" class="nav-link">Setup</a></li>
+        <li><a href="usecases.html" class="nav-link" style="color:var(--accent-primary)">Use Cases</a></li>
+        <li><a href="docs.html" class="nav-link">Docs</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="setup.html" class="btn btn-primary btn-sm">Get Started →</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#why" class="mobile-link">Why OpenClaw</a>
+      <a href="setup.html" class="mobile-link">Setup Guide</a>
+      <a href="usecases.html" class="mobile-link">Use Cases</a>
+      <a href="docs.html" class="mobile-link">Docs</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag page-hero-tag">Real Workflows</span>
+      <h1 class="page-hero-title">What <span class="gradient-text">founders actually build</span> with OpenClaw</h1>
+      <p class="page-hero-sub">Concrete use cases from real deployments. Not demos. Not hypotheticals. Actual agent workflows running in production.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 0; padding-bottom: var(--space-24);">
+
+    <!-- FOUNDER OPS -->
+    <section class="setup-step-section" id="founder" style="margin-bottom: var(--space-16);">
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">🚀</div>
+        <div class="uc-card-tag">Founder Operations</div>
+        <h2 class="uc-card-title" style="font-size: var(--text-3xl);">Personal founder assistant, running 24/7</h2>
+        <p class="uc-card-desc" style="font-size: var(--text-base); max-width: 700px;">
+          The most popular OpenClaw setup: a Mac Mini in the office, paired with Telegram, running as your personal executive assistant. No human delays. No billing. Just execution.
+        </p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-6);">
+          <div>
+            <h3 style="font-size: var(--text-lg); color: var(--text-primary); margin-bottom: var(--space-4);">Core workflows</h3>
+            <div class="uc-card-tasks">
+              <div class="uc-task-item">Daily briefing: news, metrics, and calendar summary on wake-up</div>
+              <div class="uc-task-item">Competitor monitoring with weekly intelligence digest</div>
+              <div class="uc-task-item">Burn rate and runway tracking from Notion/spreadsheet data</div>
+              <div class="uc-task-item">Investor update drafting from your notes and metrics</div>
+              <div class="uc-task-item">Meeting prep assembled from calendar invites and contact data</div>
+              <div class="uc-task-item">Email inbox triage and priority flagging</div>
+            </div>
+          </div>
+          <div>
+            <div class="usecase-visual">
+              <div class="message-flow">
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>☀️ Good morning. Today: 3 meetings, 2 urgent emails, burn rate on track. Competitor X launched pricing changes — here's the breakdown...</div>
+                <div class="msg-item msg-user">Draft the investor update for Q1</div>
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>Pulling from Notion... Q1 update drafted. Revenue +28%, runway 14mo, 3 key hires. Sent to drafts folder. Want me to send to the board list?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-info" style="margin-top: var(--space-6);">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Setup tip</strong>
+            Use a Mac Mini or a $10/mo VPS. Connect Telegram. Set a daily heartbeat in your SOUL.md to get the morning briefing automatically at 7AM.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEV / DEVOPS -->
+    <section class="setup-step-section" id="devops" style="margin-bottom: var(--space-16);">
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">⚙️</div>
+        <div class="uc-card-tag">Dev & DevOps</div>
+        <h2 class="uc-card-title" style="font-size: var(--text-3xl);">Autonomous development operations</h2>
+        <p class="uc-card-desc" style="font-size: var(--text-base); max-width: 700px;">
+          Give your dev team a tireless ops assistant. Connect OpenClaw to GitHub, error monitoring, and your deployment pipeline. Let it watch, alert, and act.
+        </p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-6);">
+          <div>
+            <h3 style="font-size: var(--text-lg); color: var(--text-primary); margin-bottom: var(--space-4);">Core workflows</h3>
+            <div class="uc-card-tasks">
+              <div class="uc-task-item">PR review: flag common issues, enforce code style, summarize diffs</div>
+              <div class="uc-task-item">Sentry errors → GitHub issues → auto-assign to on-call engineer</div>
+              <div class="uc-task-item">Run test suites on demand via Telegram command</div>
+              <div class="uc-task-item">Deploy to staging with a single message</div>
+              <div class="uc-task-item">On-call handoff summaries from log files</div>
+              <div class="uc-task-item">Uptime monitoring with instant alerts on failures</div>
+            </div>
+          </div>
+          <div>
+            <div class="usecase-visual">
+              <div class="message-flow">
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>🚨 Sentry: 89 payment errors in last 5 min. Spike started at 14:22 UTC. Likely cause: expired session tokens.</div>
+                <div class="msg-item msg-user">Create a GitHub issue and open a fix branch</div>
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>Issue #847 created. Fix branch opened: fix/payment-session-expiry. PR draft ready for review.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-info" style="margin-top: var(--space-6);">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Skill needed</strong>
+            Create a <code>github-ops.md</code> and <code>sentry-monitor.md</code> skill file in your workspace. Both can use the <code>web_fetch</code> and <code>shell</code> tools to connect without custom code.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="setup-step-section" id="research" style="margin-bottom: var(--space-16);">
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">🔍</div>
+        <div class="uc-card-tag">Research & Intelligence</div>
+        <h2 class="uc-card-title" style="font-size: var(--text-3xl);">Deep research, delivered in minutes</h2>
+        <p class="uc-card-desc" style="font-size: var(--text-base); max-width: 700px;">
+          Stop spending 3 hours on research yourself. OpenClaw can scan dozens of structured sources, cross-reference data, and return a clean, actionable briefing.
+        </p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-6);">
+          <div>
+            <h3 style="font-size: var(--text-lg); color: var(--text-primary); margin-bottom: var(--space-4);">Core workflows</h3>
+            <div class="uc-card-tasks">
+              <div class="uc-task-item">Competitor analysis: features, pricing, G2 reviews, positioning</div>
+              <div class="uc-task-item">Market sizing from publicly available data sources</div>
+              <div class="uc-task-item">Technical documentation synthesis for new tool evaluation</div>
+              <div class="uc-task-item">Weekly industry news digest from 10+ sources</div>
+              <div class="uc-task-item">Investor background research before fundraising meetings</div>
+              <div class="uc-task-item">Hire research: LinkedIn profiles, GitHub activity, culture fit signals</div>
+            </div>
+          </div>
+          <div>
+            <div class="usecase-visual">
+              <div class="message-flow">
+                <div class="msg-item msg-user">I'm pitching a CRM tomorrow. Research our top 5 competitors.</div>
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>Scanning Product Hunt, G2, Capterra, 6 subreddits, and 2 industry newsletters... Done. Salesforce, HubSpot, Attio, Clay, Folk compared across 12 dimensions. PDF + Notion page ready.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SALES -->
+    <section class="setup-step-section" id="sales" style="margin-bottom: var(--space-16);">
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">📈</div>
+        <div class="uc-card-tag">Sales & Outreach</div>
+        <h2 class="uc-card-title" style="font-size: var(--text-3xl);">Autonomous SDR agent — no headcount needed</h2>
+        <p class="uc-card-desc" style="font-size: var(--text-base); max-width: 700px;">
+          Build an agent that identifies prospects, personalizes outreach, follows up on schedule, and logs everything to your CRM — without hiring a sales rep.
+        </p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-6);">
+          <div>
+            <h3 style="font-size: var(--text-lg); color: var(--text-primary); margin-bottom: var(--space-4);">Core workflows</h3>
+            <div class="uc-card-tasks">
+              <div class="uc-task-item">Lead research: Crunchbase, LinkedIn, Twitter signals</div>
+              <div class="uc-task-item">Personalized cold email drafting with relevant hooks</div>
+              <div class="uc-task-item">Follow-up sequence management on defined schedules</div>
+              <div class="uc-task-item">CRM auto-updates after every interaction</div>
+              <div class="uc-task-item">Reply sentiment analysis and priority flagging</div>
+              <div class="uc-task-item">Weekly pipeline summary with conversion metrics</div>
+            </div>
+          </div>
+          <div>
+            <div class="usecase-visual">
+              <div class="message-flow">
+                <div class="msg-item msg-user">Find 20 Series A fintech startups and draft cold outreach</div>
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>Found 23 matching on Crunchbase (raised $5–20M, last 6mo). 20 outreach emails drafted with personalized hooks. CRM updated. Want to review before scheduling?</div>
+                <div class="msg-item msg-user">Yes, send my review list</div>
+                <div class="msg-item msg-agent"><span class="agent-indicator">OpenClaw</span>Review doc ready in Notion. 5 flagged as high-priority based on tech stack overlap. Sequence scheduled for Tuesday 9AM.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE USE CASES GRID -->
+    <div class="section-header" style="margin-top: var(--space-8);">
+      <span class="section-tag">Even More</span>
+      <h2 class="section-title">More ways founders use OpenClaw</h2>
+    </div>
+    <div class="usecase-hero-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">💰</div>
+        <div class="uc-card-tag">Finance & Ops</div>
+        <div class="uc-card-title">AI CFO assistant</div>
+        <p class="uc-card-desc">Monitor burn rate, track runway, model scenarios, and get weekly financial briefings without a CFO on payroll.</p>
+      </div>
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">🎯</div>
+        <div class="uc-card-tag">Customer Success</div>
+        <div class="uc-card-title">Support ticket triage</div>
+        <p class="uc-card-desc">Automatically classify, prioritize, and draft responses for support tickets. Route complex issues to humans.</p>
+      </div>
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">📝</div>
+        <div class="uc-card-tag">Content & Marketing</div>
+        <div class="uc-card-title">Content production pipeline</div>
+        <p class="uc-card-desc">Research → outline → draft → format. Turn ideas into publish-ready content with a single message to your agent.</p>
+      </div>
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">🤝</div>
+        <div class="uc-card-tag">Hiring & Recruiting</div>
+        <div class="uc-card-title">Automated candidate research</div>
+        <p class="uc-card-desc">Screen GitHub profiles, synthesize resumes, check online presence, and score candidates against your criteria.</p>
+      </div>
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">📊</div>
+        <div class="uc-card-tag">Analytics & Data</div>
+        <div class="uc-card-title">Natural language analytics</div>
+        <p class="uc-card-desc">Query your internal data in plain English. "What were our top 10 customers by revenue last month?" → instant answer.</p>
+      </div>
+      <div class="usecase-full-card">
+        <div class="uc-card-icon">🧪</div>
+        <div class="uc-card-tag">Technical Experiments</div>
+        <div class="uc-card-title">Rapid prototyping assistant</div>
+        <p class="uc-card-desc">Spin up code experiments, run tests, capture results, and summarize findings. Your agent as your personal lab assistant.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: var(--space-12);">
+      <h3 style="font-size: var(--text-2xl); color: var(--text-primary); margin-bottom: var(--space-4);">Ready to build your first agent?</h3>
+      <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Setup takes 5 minutes. Your first task will run in under 10.</p>
+      <a href="setup.html" class="btn btn-primary btn-lg" id="uc-final-cta">Start Setup →</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex;"><span class="logo-icon">⚡</span><span class="logo-text">OpenClaw</span></a>
+          <p class="footer-tagline">Open-source local-first AI agent for founders and fast-moving teams.</p>
+          <div class="footer-social">
+            <a href="https://github.com" class="social-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://discord.com" class="social-link" target="_blank" rel="noopener">Discord</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#why">Why OpenClaw</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="usecases.html">Use Cases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Guides</h4>
+          <ul class="footer-links">
+            <li><a href="setup.html">Setup Guide</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Community</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://discord.com" target="_blank" rel="noopener">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OpenClaw. Open-source under MIT License.</p>
+        <p class="footer-disclaimer">Built for founders who move fast.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
